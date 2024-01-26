@@ -1,8 +1,9 @@
 # Credits
 # Authored by Raghav Potdar - 1/18/24
-    #1 https://www.youtube.com/watch?v=q5HiD5PNuck --> Laid the basis of AI implementation 
-    #2 https://www.youtube.com/watch?v=fsjXq2XURTY --> Introduced the import of string & choice function
-    # Jeremiah helped with the creation of main.
+    # Helping Hands:
+    # 1 https://www.youtube.com/watch?v=q5HiD5PNuck --> Laid the basis of AI implementation 
+    # 2 https://www.youtube.com/watch?v=fsjXq2XURTY --> Introduced the import of string & choice function
+    # 3 Jeremiah --> helped with the creation of main.
 
 #IMPORTS + API Key
 import random
@@ -99,7 +100,7 @@ def NewOrAI():
 
 # Step 4
     # Main
-    # Jeremiah helped me with making this!
+    # 3 - Jeremiah helped me with making this!
 def main():
     while True:
         pswdLength = passwordLength()
