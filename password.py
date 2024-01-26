@@ -1,15 +1,14 @@
 # Credits
-# Authored by Raghav Potdar
+# Authored by Raghav Potdar - 1/18/24
     #1 https://www.youtube.com/watch?v=q5HiD5PNuck --> Laid the basis of AI implementation 
     #2 https://www.youtube.com/watch?v=fsjXq2XURTY --> Introduced the import of string & choice function
-    # Jeremiah Dawson hehlped with the creation of main.
+    # Jeremiah helped with the creation of main.
 
 #IMPORTS + API Key
 import random
 import string
-#import time (Question Attached Below)
 import openai
-openai.api_key = "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"
+#openai.api_key = "ADD YOUR OWN API KEY HERE"
 
 # Step 1
     # Asks how long the user wants the password to be. pswdLength = Password character length.
@@ -18,19 +17,14 @@ def passwordLength():
         try:
             print ("Welcome to the password generator!")
             pswdLength = int(input("How many characters do you want your password to be? "))
-            #time.wait(5)
-                # Doesn't work? How do you use this? Can it not be implemented after you ask for user input?
-            #print("Don't know how many to choose? Check this link out on password security.")
             break
         except ValueError:
             print("Input a number!")
     
     return pswdLength
 
+# May add function in the future. Would ask use if they would like a full upper or lowercase password.
 def UpperOrLower():
-    # Add maybe?
-    # Asks the user if the password should be upper or lowercase.
-    # upOrLowCase = input("Do you want the letters to be uppercase, or lowercase?")
     pass
 
 
@@ -55,7 +49,6 @@ def createPassword(pswdLength):
     if pswdLength <= 8:
         # Fun fact: In testing, my friend asked for a 8 characters password. Noting returned until I added "=" to the equation. Fun way to find a error.
         print("Here ya go! But are you sure you don't want a more complex password? The longer a password is, the more possible permutations it has, making it harder and harder for cybercriminals to crack.\n", password)
-        # Difference between , and + ?
 
 
 # Step 3
@@ -64,11 +57,11 @@ def NewOrAI():
     response = input("Do you want a new password? ")
     if response.lower() in ["yes", "y" , "sure" , "ok" , "okie doke"]:
         response = input("Here we go again...\nDo you want to do this same process again, or utilize AI? ")
-        # Same process code
         if response.lower() in ["same process", "same" , "again"]:
             print("Ok!")
             TEST = True
             while True:
+                # Same code seen in main
                 pswdLength = passwordLength()
                 createPassword(pswdLength)
                 NewOrAI()
@@ -87,8 +80,8 @@ def NewOrAI():
         TEST = True
         #pass
 
-    # AI CORE CODE - I couldn't fiddle with this. #1
-        # Is a function in a function frowned upon? Or is this nested function fine?
+    # AI CORE CODE - I can't fiddle with this. #1
+    # Is a function in a function frowned upon? Or is this nested function fine?
     if TEST == False:
         def chat_with_gpt (prompt):
             response = openai.ChatCompletion.create(
@@ -99,10 +92,9 @@ def NewOrAI():
 
         # AI CODE - Could fiddle with this!
         if __name__ == "__main__":
-        # What does this mean (above)? According to Google, it "checks if the script is being run as the main program.""
+        # According to Google, it "checks if the script is being run as the main program.""
                 # Looking for a singular string.
                 response = chat_with_gpt ("Please create a password with a character length of" + AIPassLength + ", and please incorpate this as well:" + AIPassRequire)
-                # Used to get positional arguement errors when I used "," . Why?
                 print ("AI: ", response)
 
 # Step 4
